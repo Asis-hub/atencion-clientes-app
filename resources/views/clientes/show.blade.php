@@ -38,6 +38,7 @@
                         <a href="{{ route('clientes.edit', $viewData['cliente']->getId()) }}" class="btn btn-primary">Editar cliente</a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
