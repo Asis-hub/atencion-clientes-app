@@ -21,8 +21,8 @@ Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->name("
 Route::get('/clientes/form', 'App\Http\Controllers\ClientesController@form')->name("clientes.form");
 Route::post('/clientes/create', 'App\Http\Controllers\ClientesController@store')->name("clientes.store");
 Route::get('/clientes/{id}', 'App\Http\Controllers\ClientesController@show')->name("clientes.show");
-Route::put('/clientes/{id}/edit', 'App\Http\Controllers\ClientesController@edit')->name("clientes.edit");
-Route::get('/clientes/{id}/update', 'App\Http\Controllers\ClientesController@updateFields')->name("clientes.update");
+Route::get('/clientes/{id}/edit', 'App\Http\Controllers\ClientesController@edit')->name("clientes.edit");
+Route::put('/clientes/{id}/update', 'App\Http\Controllers\ClientesController@update')->name("clientes.update");
 
 Route::get('/solicitudes', 'App\Http\Controllers\SolicitudesController@index')->name("solicitudes.index");
 Route::get('/solicitudes/form', 'App\Http\Controllers\SolicitudesController@form')->name("solicitudes.form");
