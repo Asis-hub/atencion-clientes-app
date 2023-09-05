@@ -26,7 +26,7 @@
                     <td>{{ $cliente->solicitudes->first()->total_solicitudes ?? 0 }}</td>
                     <td>
                         <a href="{{ route('clientes.show', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Ver</a>
-                        <a href="{{ route('clientes.edit', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Editar</a>
+                        <a href="{{ route('clientes.edit', ['id' => $cliente->getId()]) }}" class="btn bg-secondary text-white">Editar</a>
                         <form method="POST" action="{{ route('clientes.destroy', ['id' => $cliente->getId()]) }}" style="display: inline;">
                             @csrf
                             @method('DELETE')
