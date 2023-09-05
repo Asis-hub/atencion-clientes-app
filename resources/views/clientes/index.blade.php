@@ -26,6 +26,7 @@
                     <td>{{ $cliente->solicitudes->first()->total_solicitudes ?? 0 }}</td>
                     <td>
                         <a href="{{ route('clientes.show', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Ver</a>
+                        <a href="{{ route('clientes.edit', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Editar</a>
                         <!-- Add other actions buttons as needed -->
                     </td>
                 </tr>
