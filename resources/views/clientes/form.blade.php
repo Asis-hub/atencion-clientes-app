@@ -4,10 +4,7 @@
     <div class="card">
         <div class="card mb-4">
             <div class="card-header">
-                Registrar cliente {{ $viewData['cliente']->getId() }}
-                    {{ $viewData['cliente']->getNombre() }}
-                    {{ $viewData['cliente']->getPrimerApellido() }}
-                    {{ $viewData['cliente']->getSegundoApellido() }}
+                Registrar cliente 
             </div>
             <div class="card-body">
                 @if ($errors->any())
@@ -67,26 +64,6 @@
                                 <label class="col-form-label">Teléfono:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                     <input name="telefono" value="{{ old('telefono') }}" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 row">
-                                <label class="col-form-label">Solicitud de atención:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="solicitud_atencion" value="{{ old('solicitud_atencion') }}" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 row">
-                                <label class="col-form-label">Observaciones:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="observaciones" value="{{ old('observaciones') }}" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>

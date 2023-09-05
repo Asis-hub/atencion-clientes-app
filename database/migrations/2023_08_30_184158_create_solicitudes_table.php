@@ -12,15 +12,19 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('solicitudes', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('idCliente');
-            $table->string('solicitud_atencion');
-            $table->string('observaciones');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('solicitudes', function (Blueprint $table) {
+        $table->id();
+        $table->string('solicitud_atencion');
+        $table->string('observaciones');
+        $table->unsignedBigInteger('cliente_id'); // Llave foránea para clientes
+        $table->timestamps();
+
+        // LLave foránea
+        $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+    });
+}
+
 
     /**
      * Reverse the migrations.

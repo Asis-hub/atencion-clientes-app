@@ -73,26 +73,6 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <div class="mb-3 row">
-                                <label class="col-form-label">Solicitud de atención:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="solicitud_atencion" value="{{ $viewData['cliente']->getSolicitudAtencion() }}" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="mb-3 row">
-                                <label class="col-form-label">Observaciones:</label>
-                                <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="observaciones" value="{{ $viewData['cliente']->getObservaciones() }}" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>

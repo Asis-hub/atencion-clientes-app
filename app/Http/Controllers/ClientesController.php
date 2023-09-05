@@ -30,9 +30,7 @@ class ClientesController extends Controller
             'segundo_apellido' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
             'direccion' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
-            'solicitud_atencion' => ['required', 'string', 'max:255'],
-            'observaciones' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255']
         ]);
 
         $cliente = new Cliente();
@@ -42,8 +40,6 @@ class ClientesController extends Controller
         $cliente->email = $validatedData['email'];
         $cliente->direccion = $validatedData['direccion'];
         $cliente->telefono = $validatedData['telefono'];
-        $cliente->solicitud_atencion = $validatedData['solicitud_atencion'];
-        $cliente->observaciones = $validatedData['observaciones'];
         $cliente->save();
 
         return response()->json(['message' => 'Data stored successfully']);
@@ -65,9 +61,7 @@ class ClientesController extends Controller
             'segundo_apellido' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
             'direccion' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
-            'solicitud_atencion' => ['required', 'string', 'max:255'],
-            'observaciones' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255']
         ]);
     
         $cliente = Cliente::findOrFail($id);
@@ -77,8 +71,6 @@ class ClientesController extends Controller
         $cliente->setEmail($request->input('email'));
         $cliente->setDireccion($request->input('direccion'));
         $cliente->setTelefono($request->input('telefono'));
-        $cliente->setSolicitudAtencion($request->input('solicitud_atencion'));
-        $cliente->setObservaciones($request->input('observaciones'));
         $cliente->save();
 
         $viewData = [];

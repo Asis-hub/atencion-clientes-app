@@ -33,16 +33,6 @@
                         <strong>Teléfono:</strong> {{ $viewData['cliente']->getTelefono() }}
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <strong>Solicitud de Atenciones:</strong> {{ $viewData['cliente']->getSolicitudAtencion() }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <strong>observaciones:</strong> {{ $viewData['cliente']->getObservaciones() }}
-                    </div>
-                </div>
                 <div class="row mt-4">
                     <div class="col">
                         <a href="{{ route('clientes.edit', $viewData['cliente']->getId()) }}" class="btn btn-primary">Editar cliente</a>

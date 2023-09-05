@@ -9,6 +9,13 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre', 'primer_apellido', 'segundo_apellido', 'email', 'direccion', 'telefono'];
+
+    public function solicitudes()
+    {
+        return $this->hasMany(Solicitud::class, 'cliente_id');
+    }
+
     public function getId()
     {
         return $this->attributes['id'];
@@ -65,20 +72,5 @@ class Cliente extends Model
     {
         $this->attributes['telefono'] = $telefono;
     }
-    public function getSolicitudAtencion()
-    {
-        return $this->attributes['solicitud_atencion'];
-    }
-    public function setSolicitudAtencion($solicitud_atencion)
-    {
-        $this->attributes['solicitud_atencion'] = $solicitud_atencion;
-    }
-    public function getObservaciones()
-    {
-        return $this->attributes['observaciones'];
-    }
-    public function setObservaciones($observaciones)
-    {
-        $this->attributes['observaciones'] = $observaciones;
-    }
+    
 }
