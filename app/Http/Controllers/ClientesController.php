@@ -106,6 +106,14 @@ class ClientesController extends Controller
 
         return view('clientes.edit')->with("viewData", $viewData);
     }
+    public function destroy($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+    
+        return redirect()->route('clientes.index')->with('success', 'Cliente deleted successfully');
+    }
 
+    
 
 }

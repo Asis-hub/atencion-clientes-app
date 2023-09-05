@@ -27,7 +27,11 @@
                     <td>
                         <a href="{{ route('clientes.show', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Ver</a>
                         <a href="{{ route('clientes.edit', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Editar</a>
-                        <!-- Add other actions buttons as needed -->
+                        <form method="POST" action="{{ route('clientes.destroy', ['id' => $cliente->getId()]) }}" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn bg-danger text-white" onclick="return confirm('¿Estás seguro de eliminar este cliente?')">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

@@ -23,6 +23,8 @@ Route::post('/clientes/create', 'App\Http\Controllers\ClientesController@store')
 Route::get('/clientes/{id}', 'App\Http\Controllers\ClientesController@show')->name("clientes.show");
 Route::get('/clientes/{id}/edit', 'App\Http\Controllers\ClientesController@edit')->name("clientes.edit");
 Route::put('/clientes/{id}/update', 'App\Http\Controllers\ClientesController@update')->name("clientes.update");
+Route::delete('clientes/{id}', 'App\Http\Controllers\ClientesController@destroy')->name('clientes.destroy');
+
 
 Route::get('/solicitudes', 'App\Http\Controllers\SolicitudesController@index')->name("solicitudes.index");
 Route::get('/solicitudes/form', 'App\Http\Controllers\SolicitudesController@form')->name("solicitudes.form");
