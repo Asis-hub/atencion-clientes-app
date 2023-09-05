@@ -38,7 +38,16 @@
                         <a href="{{ route('clientes.edit', $viewData['cliente']->getId()) }}" class="btn btn-primary">Editar cliente</a>
                     </div>
                 </div>
-                
+                <h5 class="mt-4">Solicitudes:</h5>
+                <ul class="list-group">
+                    @foreach ($solicitudes as $solicitud)
+                        <li class="list-group-item">
+                            <strong>Solicitud ID:</strong> {{ $solicitud->id }}<br>
+                            <strong>Solicitud Atencion:</strong> {{ $solicitud->solicitud_atencion }}<br>
+                            <strong>Observaciones:</strong> {{ $solicitud->observaciones }}
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

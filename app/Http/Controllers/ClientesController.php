@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cliente;
+use App\Models\Solicitud;
 
 
 use Illuminate\Http\Request;
@@ -46,14 +47,18 @@ class ClientesController extends Controller
         return response()->json(['message' => 'Data stored successfully']);
     }
     public function show($id)
-    {
-        $viewData = [];
-        $cliente = Cliente::findOrFail($id);
-        $viewData["title"] = "Detalles de Cliente - ".$cliente->getId();
-        $viewData["subtitle"] = "Detalles";
-        $viewData["cliente"] = $cliente;
-        return view('clientes.show')->with("viewData", $viewData);
-    }
+{
+    $cliente = Cliente::findOrFail($id);
+    $solicitudes = $cliente->solicitudes;
+
+    $viewData = [
+        "title" => "Detalles de Cliente - " . $cliente->getId(),
+        "subtitle" => "Detalles",
+        "cliente" => $cliente,
+    ];
+
+    return view('clientes.show', compact('solicitudes'))->with("viewData", $viewData);
+}
     public function update(Request $request, $id)
     {
         $request->validate([
