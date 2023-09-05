@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Cliente;
 use App\Models\Solicitud;
-
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -11,10 +11,18 @@ class ClientesController extends Controller
 {
     public function index()
     {
-        $viewData = [];
-        $viewData["title"] = "A Customer Support App - Clientes";
-        $viewData["subtitle"] = "Lista de clientes";
-        $viewData["clientes"] = Cliente::all();
+        // Obtiene todos los clientes con la suma de todas sus solicitudes
+        $clientes = Cliente::with(['solicitudes' => function ($query) {
+            $query->select('cliente_id', DB::raw('COUNT(*) as total_solicitudes'))
+                ->groupBy('cliente_id');
+        }])->get();
+    
+        $viewData = [
+            "title" => "A Customer Support App - Clientes",
+            "subtitle" => "Lista de clientes",
+            "clientes" => $clientes,
+        ];
+    
         return view('clientes.index')->with("viewData", $viewData);
     }
     public function form()

@@ -23,7 +23,7 @@
                 <tr>
                     <td>{{ $cliente->getNombre() }} {{ $cliente->getPrimerApellido() }} {{ $cliente->getSegundoApellido() }}</td>
                     <td>{{ $cliente->getEmail() }}</td>
-                    <td></td>
+                    <td>{{ $cliente->solicitudes->first()->total_solicitudes ?? 0 }}</td>
                     <td>
                         <a href="{{ route('clientes.show', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Ver</a>
                         <!-- Add other actions buttons as needed -->
