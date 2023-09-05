@@ -12,18 +12,18 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Primer Apellido</th>
-                    <th>Segundo Apellido</th>
+                    <th>Cliente</th>
+                    <th>Email</th>
+                    <th>Número de solicitudes</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($viewData['clientes'] as $cliente)
                 <tr>
-                    <td>{{ $cliente->getNombre() }}</td>
-                    <td>{{ $cliente->getPrimerApellido() }}</td>
-                    <td>{{ $cliente->getSegundoApellido() }}</td>
+                    <td>{{ $cliente->getNombre() }} {{ $cliente->getPrimerApellido() }} {{ $cliente->getSegundoApellido() }}</td>
+                    <td>{{ $cliente->getEmail() }}</td>
+                    <td></td>
                     <td>
                         <a href="{{ route('clientes.show', ['id' => $cliente->getId()]) }}" class="btn bg-primary text-white">Ver</a>
                         <!-- Add other actions buttons as needed -->
