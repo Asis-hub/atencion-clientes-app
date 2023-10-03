@@ -6,7 +6,6 @@ use App\Models\Solicitud;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
-
 class SolicitudesController extends Controller
 {
     public function index()

@@ -36,5 +36,5 @@ Route::get('/solicitudes/{id}/update', 'App\Http\Controllers\SolicitudesControll
 /** *
  *   - Define las rutas y crea los controladores necesarios para gestionar las operaciones CRUD de clientes y solicitudes.
     * - Las rutas podrían ser: `clientes`, `clientes/create`, `clientes/{id}`, `clientes/{id}/edit`, `solicitudes`, `solicitudes/create`, `solicitudes/{id}`, `solicitudes/{id}/edit`.
- *  
+ *
 */

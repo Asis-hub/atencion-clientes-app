@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'A Customer Support App')
+@section('title', 'Aplicación de Soporte Técnico')
 @section('content')
 <div class="text-center">
 

@@ -72,5 +72,4 @@ class Cliente extends Model
     {
         $this->attributes['telefono'] = $telefono;
     }
-    
 }

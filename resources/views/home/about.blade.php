@@ -2,14 +2,13 @@
 @section('title', $title)
 @section('subtitle', $subtitle)
 @section('content')
-<div class="container">
-<div class="row">
-<div class="col-lg-4 ms-auto">
+<div class="container justify-content-center">
+<div class="row ">
+
 <p class="lead">{{ $description }}</p>
-</div>
-<div class="col-lg-4 me-auto">
+<br>
 <p class="lead">{{ $author }}</p>
-</div>
+
 </div>
 </div>
 @endsection

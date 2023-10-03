@@ -20,3 +20,12 @@ nav {
     border: 3px solid lightskyblue;
     padding: 10px;
 }
+.bg-primary{
+    background-color: #3e5a74;
+}
+.nav-logo{
+    max-height: 100px;
+}
+.menu-icono{
+    max-height: 100px;
+}
